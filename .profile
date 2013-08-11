@@ -1,5 +1,7 @@
+#Default bash editor
 export EDITOR=vim
 
+#Aliases
 alias ll='ls -al'
 alias s='cd ..'
 alias ss='cd ../..'
@@ -8,7 +10,7 @@ alias ssss='cd ../../../..'
 alias sssss='cd ../../../../..'
 alias ssssss='cd ../../../../../..'
 
-
+#Current git branch displayed in prompt
 function parse_git_branch () {
        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }

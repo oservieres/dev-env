@@ -38,7 +38,7 @@ nnoremap <buffer> <C-p> :call pdv#DocumentCurrentLine()<CR>
 
 "File explorer
 Bundle 'scrooloose/nerdtree'
-map fe :NERDTree<cr>
+map fe :NERDTree ~/projects<cr>
 
 "Re-enable file type detection
 filetype on

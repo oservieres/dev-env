@@ -2,6 +2,9 @@
 set expandtab
 set ts=4
 set sw=4
+autocmd FileType ruby set tabstop=2|set shiftwidth=2
+
+set number
 
 "Enable syntax coloring
 syntax on
@@ -42,3 +45,7 @@ map fe :NERDTree ~/projects<cr>
 
 "Re-enable file type detection
 filetype on
+
+
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete

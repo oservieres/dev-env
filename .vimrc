@@ -2,7 +2,7 @@
 set expandtab
 set ts=4
 set sw=4
-autocmd FileType ruby set tabstop=2|set shiftwidth=2
+autocmd FileType ruby set ts=2|set sw=2
 
 set number
 
@@ -36,16 +36,23 @@ Bundle 'gmarik/vundle'
 "php doc generator
 Bundle 'tobyS/vmustache'
 Bundle 'tobyS/pdv'
+
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
 nnoremap <buffer> <C-p> :call pdv#DocumentCurrentLine()<CR>
-
-"File explorer
-Bundle 'scrooloose/nerdtree'
-map fe :NERDTree ~/projects<cr>
 
 "Re-enable file type detection
 filetype on
 
-
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
+
+Bundle 'joonty/vdebug.git'
+
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+    let g:ctrlp_use_caching = 0
+endif
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>

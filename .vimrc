@@ -37,6 +37,8 @@ Bundle 'gmarik/vundle'
 Bundle 'tobyS/vmustache'
 Bundle 'tobyS/pdv'
 
+Bundle 'yssl/QFEnter'
+
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
 nnoremap <buffer> <C-p> :call pdv#DocumentCurrentLine()<CR>
 

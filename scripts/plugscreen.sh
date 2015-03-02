@@ -10,7 +10,7 @@ xfconf-query -c xfce4-panel -p /panels/panel-1/size -s 26
 #move windows
 
 function move_window {
-    WIDS=`xdotool search --name "$1"`
+    WIDS=`xdotool search --class "$1"`
     for WID in $WIDS
     do
         wmctrl -ir $WID -b remove,maximized_vert,maximized_horz
@@ -19,6 +19,6 @@ function move_window {
     done
 }
 
-move_window "Google Chrome"
-move_window "Terminal"
+move_window "google-chrome-stable"
+move_window "terminal"
 
